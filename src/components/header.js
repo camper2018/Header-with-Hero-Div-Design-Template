@@ -7,11 +7,11 @@ import { AiOutlineLogin } from "react-icons/ai";
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => {
-        setMenuOpen((prevState)=> !prevState);
+        setMenuOpen((prevState) => !prevState);
     }
     const headerRef = useRef(null);
     const handleClickOutside = (event) => {
-        if ( headerRef.current && !headerRef.current.contains(event.target)) {
+        if (headerRef.current && !headerRef.current.contains(event.target)) {
             setMenuOpen(false);
         }
     };
@@ -45,13 +45,25 @@ const Header = () => {
                     <a href="#" className="hover:underline">Services</a>
                     <a href="#" className="hover:underline">Contact</a>
                 </nav>
-                {/* Login button only visible in screen sizes medium or larger */}
-                <button className="p-2 rounded-md hover:bg-blue-100 hover:text-blue-900 hidden md:flex items-center space-x-6 text-xl">
-                    <a href="#" className="flex flex-row items-center">
-                        <span>Login</span>
-                        <AiOutlineLogin size={25} />
-                    </a>
-                </button>
+                <div className="flex justify-evenly items-center">
+                    {/* search bar */}
+                        <div class="flex mr-0 items-center md:hidden lg:flex lg:mr-10">
+                            <input type="text" id="simple-search" class="bg-gray-100 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:text-black block w-full  p-2.5" placeholder="Search..." required />
+                            <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="sr-only">Search</span>
+                            </button>
+                        </div>
+                    {/* Login button only visible in screen sizes medium or larger */}
+                    <button className="p-2 rounded-md hover:bg-blue-100 hover:text-blue-900 hidden md:flex items-center space-x-6 text-xl">
+                        <a href="#" className="flex flex-row items-center">
+                            <span>Login</span>
+                            <AiOutlineLogin size={25} />
+                        </a>
+                    </button>
+                </div>
                 {/* Menu button only visible in screen sizes smaller than 768px */}
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none">
@@ -67,10 +79,10 @@ const Header = () => {
                                 d="M15.854 12.854L11 8l4.854-4.854a.503.503 0 000-.707L13.561.146a.499.499 0 00-.707 0L8 5 3.146.146a.5.5 0 00-.707 0L.146 2.439a.499.499 0 000 .707L5 8 .146 12.854a.5.5 0 000 .707l2.293 2.293a.499.499 0 00.707 0L8 11l4.854 4.854a.5.5 0 00.707 0l2.293-2.293a.499.499 0 000-.707z"
                             />
                         </svg>) :
-                            (<svg 
-                                className={`w-9 h-9 transition-all ease-in-out duration-200`} 
-                                fill="none" stroke="currentColor" 
-                                viewBox="0 0 24 24" 
+                            (<svg
+                                className={`w-9 h-9 transition-all ease-in-out duration-200`}
+                                fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
