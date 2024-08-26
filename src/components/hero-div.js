@@ -217,7 +217,7 @@ const Header = () => {
                             {/* text div that takes 1/2 width on medium to large screens and full width on smaller screens --> */}
                             <div className="px-4 md:ps-0 lg:ps-10 w-full md:w-1/2 order-last md:order-first" >
                                 <div className="flex flex-col justify-between items-start py-12">
-                                    <h1 className="text-2xl text-gray-700 font-bold">I'm A Responsive Hero Div</h1>
+                                    <h1 className="text-2xl text-gray-700 font-bold">I am A Responsive Hero Div</h1>
                                     <h5 className="py-4 text-lg font-semibold text-gray-500">A Fully Responsive Template For All Screen Sizes.</h5>
                                     <p className="py-7 text-gray-500">Aenean ornare velit lacus, ac varius enim ullamcorper eu.
                                         Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris.
